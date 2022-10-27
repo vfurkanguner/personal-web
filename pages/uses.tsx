@@ -1,10 +1,44 @@
-import { LinkIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import { LinkIcon } from "@heroicons/react/24/solid";
 import Layout from "../components/Layout";
 
 type Props = {};
 
-const uses = {
+interface Workstation {
+  title: string;
+  link: string;
+  description: string;
+  id: number;
+}
+
+interface Software {
+  title: string;
+  link: string;
+  description: string;
+  id: number;
+}
+
+interface Design {
+  title: string;
+  link: string;
+  description: string;
+  id: number;
+}
+
+interface Productivity {
+  title: string;
+  link: string;
+  description: string;
+  id: number;
+}
+interface UsesProps {
+  workstation: Array<Workstation>;
+  software: Array<Software>;
+  design: Array<Design>;
+  productivity: Array<Productivity>;
+}
+
+const uses: UsesProps = {
   workstation: [
     {
       id: 1,
@@ -72,32 +106,40 @@ export default function Projects({}: Props) {
 
       <aside className="mt-16 sm:mt-20">
         <ul className="grid grid-cols-1 space-y-16">
-          {Object.keys(uses).map((key): any => (
-            <li key={key} className="grid space-y-8 md:space-y-0 md:grid-cols-3 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-              <h2 className="text-sm font-semibold text-zinc-800 dark:text-zinc-100 capitalize">
-                {key}
-              </h2>
-              <ul className="flex-col flex col-span-2 space-y-6">
-                {uses[key].map((use) => (
-                  <li
-                    key={use.id}
-                    className="group relative flex flex-col space-y-4"
-                  >
-                    <h3 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                      {use.title}
-                    </h3>
-                    <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                      {use.description}
-                    </p>
-                    <p className="group-hover:text-green-600 hover:cursor-pointer relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                      <LinkIcon className="inline-block w-4 h-4 mr-1" />
-                      {use.link}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
+          {Object.keys(uses).map((key: string) => {
+            const getKey = uses[key as keyof UsesProps];
+            return (
+              <li
+                key={key}
+                className="grid space-y-8 md:space-y-0 md:grid-cols-3 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
+              >
+                <h2 className="text-sm font-semibold text-zinc-800 dark:text-zinc-100 capitalize">
+                  {key}
+                </h2>
+                <ul className="flex-col flex col-span-2 space-y-6">
+                  {getKey.map(
+                    (use): any => (
+                      <li
+                        key={use.id}
+                        className="group relative flex flex-col space-y-4"
+                      >
+                        <h3 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+                          {use.title}
+                        </h3>
+                        <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                          {use.description}
+                        </p>
+                        <p className="group-hover:text-green-600 hover:cursor-pointer relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                          <LinkIcon className="inline-block w-4 h-4 mr-1" />
+                          {use.link}
+                        </p>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </li>
+            );
+          })}
         </ul>
       </aside>
     </Layout>
