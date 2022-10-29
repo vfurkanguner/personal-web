@@ -5,7 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'mesh': "url('../public/mesh.png')"
+      }
+    },
   },
   plugins: [],
   darkMode: 'class'

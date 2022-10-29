@@ -46,7 +46,7 @@ export default function MyModal() {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex   justify-center p-4 text-center">
+            <div className="flex h-full  justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -56,7 +56,7 @@ export default function MyModal() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800  p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full  flex flex-col transform overflow-hidden rounded-2xl bg-transparent p-6 text-left align-middle shadow-xl transition-all">
                   <div className="flex justify-between mb-8">
                     <span>Navigation</span>
                     <button
@@ -71,7 +71,7 @@ export default function MyModal() {
                   <div className="mt-2">
                     <ul className="grid">
                       {navigation.map((nav) => (
-                        <li key={nav.name} className="w-full border-b py-2  cursor-pointer">
+                        <li key={nav.name} className="font-mono py-6 pl-4 text-4xl hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 dark:from-indigo-600 dark:to-blue-500 hover:text-transparent hover:bg-clip-text lg:text-7xl transition-all hover:scale-105 text-zinc-900 dark:text-zinc-200 font-semibold cursor-pointer">
                           <Link href={nav.href}>{nav.name}</Link>
                         </li>
                       ))}

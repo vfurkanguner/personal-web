@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 type Props = {};
 
 export const navigation = [
-  { name: "About", href: "/" },
+  { name: "About", href: "/about" },
   {
     name: "Projects",
     href: "/projects",
@@ -26,7 +26,6 @@ export default function Navbar({}: Props) {
     return route === router.pathname;
   };
 
-
   const onToggleDarkMode = () => {
     const html = document.querySelector("html");
     if (html?.classList.contains("dark")) {
@@ -39,27 +38,29 @@ export default function Navbar({}: Props) {
   };
 
   return (
-    <div className="flex items-center justify-between">
-      <Image
-        src={Profile}
-        alt="logo"
-        width={32}
-        height={32}
-        className="rounded-full ring-4 ring-zinc-100 dark:ring-zinc-300/20"
-      />
-      <ul className="hidden md:flex justify-between  gap-5   bg-slate-200 dark:bg-zinc-800  rounded-full bg-white/90  text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+    <div className="flex items-center justify-between relative">
+      <Link href="/">
+        <Image
+          src={Profile}
+          alt="logo"
+          width={32}
+          height={32}
+          className="rounded-full hover:scale-110 transition-all  ring-4 ring-zinc-100 dark:ring-zinc-300/20"
+        />
+      </Link>
+      <ul className="hidden  md:flex justify-between  gap-5   bg-slate-200 dark:bg-zinc-800  rounded-full bg-white/90  text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         {navigation.map((item) => (
           <li
             key={item.name}
-            className={`first-of-type:ml-4  last-of-type:mr-4 p-2 relative   cursor-pointer ${
+            className={`first-of-type:ml-4  last-of-type:mr-4 p-2 relative hover:scale-110 transition-all   cursor-pointer ${
               isRouteActive(item.href)
-                ? "text-red-500"
+                ? "text-indigo-500"
                 : "dark:text-zinc-200 text-zinc-900 "
             }`}
           >
             <Link href={item.href}>{item.name}</Link>
             {isRouteActive(item.href) ? (
-              <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-red-500/0 via-red-500/40 to-red-500/0 dark:from-red-400/0 dark:via-red-400/40 dark:to-red-400/0" />
+              <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-indigo-500/0 via-indigo-500/40 to-indigo-500/0 dark:from-indigo-400/0 dark:via-indigo-400/40 dark:to-indigo-400/0" />
             ) : null}
           </li>
         ))}
