@@ -1,11 +1,39 @@
 /* eslint-disable @next/next/no-img-element */
+import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import { BriefcaseIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
 import Image from "next/image";
 import Layout from "../components/Layout";
+import images from "../constants/images";
+import { getAllPosts } from "../lib/api";
 import Pic from "../public/mainpic.webp";
+import classNames from "../utils/classNames";
 
-export default function Home() {
+type Props = {
+  allPosts: PostType[];
+};
+
+type PostType = {
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+  coverImage: string;
+  author: AuthorType;
+  excerpt: string;
+  ogImage: {
+    url: string;
+  };
+  content: string;
+};
+
+type AuthorType = {
+  name: string;
+  picture: string;
+};
+export default function Home({ allPosts }: Props) {
   const imageOne = "https://source.unsplash.com/random";
+
   return (
     <Layout>
       <Head>
@@ -37,55 +65,136 @@ export default function Home() {
         </fieldset>
 
         <figcaption className="mt-16 lg:mt-20">
-          <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2">
-              <img
-                alt=""
-                sizes="(min-width: 640px) 18rem, 11rem"
-                // srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=16&amp;q=75 16w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=32&amp;q=75 32w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=48&amp;q=75 48w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=64&amp;q=75 64w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=96&amp;q=75 96w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=128&amp;q=75 128w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=3840&amp;q=75 3840w"
-                // src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=3840&amp;q=75"
-                src={imageOne}
-                width="3744"
-                height="5616"
-                decoding="async"
-                data-nimg="future"
-                className="absolute grayscale hover:grayscale-0 inset-0 h-full w-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2">
-              <img
-                alt=""
-                sizes="(min-width: 640px) 18rem, 11rem"
-                // srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=16&amp;q=75 16w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=32&amp;q=75 32w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=48&amp;q=75 48w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=64&amp;q=75 64w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=96&amp;q=75 96w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=128&amp;q=75 128w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=3840&amp;q=75 3840w"
-                // src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=3840&amp;q=75"
-                src={imageOne}
-                width="3744"
-                height="5616"
-                decoding="async"
-                data-nimg="future"
-                className="absolute grayscale hover:grayscale-0 inset-0 h-full w-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2">
-              <img
-                alt=""
-                sizes="(min-width: 640px) 18rem, 11rem"
-                // srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=16&amp;q=75 16w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=32&amp;q=75 32w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=48&amp;q=75 48w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=64&amp;q=75 64w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=96&amp;q=75 96w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=128&amp;q=75 128w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=3840&amp;q=75 3840w"
-                // src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=3840&amp;q=75"
-                src="https://i.pravatar.cc/300"
-                width="3744"
-                height="5616"
-                decoding="async"
-                data-nimg="future"
-                className="absolute grayscale hover:grayscale-0 inset-0 h-full w-full object-cover"
-                loading="lazy"
-              />
-            </div>
+          {/* <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8"> */}
+          <div className="-my-4 gap-4 py-4 sm:gap-6 columns-2 lg:columns-3">
+            {images.map((image, index) => (
+              <div
+                key={image.id}
+                className={classNames(
+                  "grayscale hover:grayscale-0  w-full my-6 rotate-2 hover:rotate-0",
+                  index % 2 === 0 ? "aspect-square" : " aspect-video"
+                )}
+              >
+                <img
+                  alt=""
+                  sizes="(min-width: 640px) 18rem, 11rem"
+                  src={image.src}
+                  width="3744"
+                  height="5616"
+                  decoding="async"
+                  data-nimg="future"
+                  className={classNames(
+                    "grayscale hover:grayscale-0  w-full h-full object-cover rounded-lg"
+                  )}
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
         </figcaption>
+
+        <div className="mt-16 lg:mt-20 grid lg:grid-cols-2">
+          {allPosts.map((post) => {
+            return (
+              <article
+                key={post.id}
+                className="group relative flex flex-col items-start"
+              >
+                <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+                  <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+                  <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+                  <span className="relative z-10">{post.title}</span>
+                </h2>
+                <time
+                  className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
+                  dateTime="2022-09-05"
+                >
+                  <span
+                    className="absolute inset-y-0 left-0 flex items-center"
+                    aria-hidden="true"
+                  >
+                    <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
+                  </span>
+                  {post.date}
+                </time>
+                <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                  {post.excerpt}
+                </p>
+                <div
+                  aria-hidden="true"
+                  className="relative z-10 mt-4 flex items-center text-sm font-medium text-indigo-500"
+                >
+                  Read article
+                  <ChevronRightIcon className="w-4 h-4" />
+                </div>
+              </article>
+            );
+          })}
+          <div className="space-y-10 lg:pl-16 xl:pl-24">
+            <form className="space-y-4  rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+              <div className="">
+                <span className="inline-flex items-center">
+                  <EnvelopeIcon className="w-5 h-5 mr-2 text-zinc-200" />
+                  Stay up to date
+                </span>
+                <p>
+                  Get notified when I publish something new, and unsubscribe at
+                  any time.
+                </p>
+              </div>
+              <div className="mt-6 flex">
+                <input
+                  className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 sm:text-sm"
+                  placeholder="Email address"
+                />
+                <button className="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70 ml-4 flex-none">
+                  Join
+                </button>
+              </div>
+            </form>
+
+            <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+              <h3 className="text-base tracking-tight items-center inline-flex text-zinc-800 dark:text-zinc-100">
+                <BriefcaseIcon className="w-5 h-5 mr-2 text-zinc-200" />
+                <span className="relative z-10">Work</span>
+              </h3>
+
+              <ul>
+                <li className="mt-2 text-sm flex gap-4 text-zinc-600 dark:text-zinc-400">
+                  <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                    <img
+                      src="https://i.pravatar.cc/300"
+                      alt=""
+                      className="w-7 h-7 rounded-full"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold">John Doe</p>
+                    <p className="font-light">Frontend developer</p>
+                  </div>
+
+                  <span>2019-2021</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );
 }
+
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ]);
+
+  return {
+    props: { allPosts },
+  };
+};
