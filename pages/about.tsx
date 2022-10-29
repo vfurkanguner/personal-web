@@ -35,7 +35,7 @@ export default function Home() {
         {/* Text */}
         <div className="lg:order-first lg:row-span-2">
           <h2 className="text-xl bg-gradient-to-r dark:via-blue-600 via-blue-600 bg-clip-text from-indigo-600 to-red-600 dark:from-indigo-600 dark:to-red-500 text-transparent">
-            I'm Furkan.{" "}
+            I&apos;m Furkan.{" "}
           </h2>
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Passionate to craft amazing
@@ -46,26 +46,26 @@ export default function Home() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’ve loved making things for as long as I can remember, and wrote
+              I&apos;ve loved making things for as long as I can remember, and wrote
               my first program when I was 6 years old, just two weeks after my
               mom brought home the brand new Macintosh LC 550 that I taught
               myself to type on.
             </p>
             <p>
-              I’ve gone through a number of phases in my career, and each of
+              I&apos;ve gone through a number of phases in my career, and each of
               them has informed my current work ethos and philosophy. I have
               excelled in a number of project management roles in diverse
               industries, and believe that my number one asset is my ability to
               adapt to any challenge that is thrown my way.
             </p>
             <p>
-              I’ve loved making things for as long as I can remember, and wrote
+              I&apos;ve loved making things for as long as I can remember, and wrote
               my first program when I was 6 years old, just two weeks after my
               mom brought home the brand new Macintosh LC 550 that I taught
               myself to type on.
             </p>
             <p>
-              Today, I’m the founder of Planetaria, where we’re working on
+              Today, I&apos;m the founder of Planetaria, where we&apos;re working on
               civilian space suits and manned shuttle kits you can assemble at
               home so that the next generation of kids really can make it to
               orbit — from the comfort of their own backyards.
