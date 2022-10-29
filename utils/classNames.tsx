@@ -1,8 +1,4 @@
-
-type Props = {
-    args : string[]
-}
-
-export default function classNames({args }: Props) {
-    return args.filter(Boolean).join(' ')
-}
+export default function classNames(...classes: Array<string>) {
+    return classes.filter(Boolean).join(' ');
+  }
+  
