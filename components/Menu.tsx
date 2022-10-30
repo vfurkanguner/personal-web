@@ -71,7 +71,7 @@ export default function MyModal() {
                   <div className="mt-2">
                     <ul className="grid">
                       {navigation.map((nav) => (
-                        <li key={nav.name} className="font-mono py-6 pl-4 text-4xl hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 dark:from-indigo-600 dark:to-blue-500 hover:text-transparent hover:bg-clip-text lg:text-7xl transition-all hover:scale-105 text-zinc-900 dark:text-zinc-200 font-semibold cursor-pointer">
+                        <li key={nav.name} className="font-mono py-6 pl-4 text-4xl hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 dark:from-indigo-600 dark:to-blue-500 hover:text-transparent hover:bg-clip-text lg:text-7xl transition-all hover:scale-105 text-zinc-200 dark:text-zinc-200 font-semibold cursor-pointer">
                           <Link href={nav.href}>{nav.name}</Link>
                         </li>
                       ))}

@@ -48,7 +48,9 @@ export default function Home({ allPosts }: Props) {
             I&apos;m Furkan.{" "}
           </h2>
           <h1 className="my-4">
-            <span className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">Software designer, founder,</span>
+            <span className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+              Software developer, founder,
+            </span>
             {"  "}
             <span className="flex my-4 bg-gradient-to-r dark:via-indigo-600 via-indigo-600 bg-clip-text from-yellow-500 to-blue-600 dark:from-yellow-600 dark:to-blue-600 text-transparent">
               and amateur astronaut.
@@ -56,10 +58,9 @@ export default function Home({ allPosts }: Props) {
           </h1>
           <div className="my-4 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I&apos;m Furkan, a software designer and entrepreneur based in New
-              York City. I&apos;m the founder and CEO of Planetaria, where we
-              develop technologies that empower regular people to explore space
-              on their own terms.
+              I&apos;m a software developer and entrepreneur, passionate about
+              innovation, design and startups. I believe in the power of small
+              teams with unlimited potential.
             </p>
           </div>
         </fieldset>
@@ -96,27 +97,40 @@ export default function Home({ allPosts }: Props) {
           </div>
         </figcaption>
 
-        <div className="mt-16 lg:mt-20 grid lg:grid-cols-2">
+        <div className="mt-16 lg:mt-20 space-y-4 ">
           {allPosts.map((post) => {
             return (
               <article
                 key={post.id}
-                className="group relative flex"
+                className="space-y-4 lg:space-y-0 p-8 group relative flex flex-col lg:flex-row justify-between bg-zinc-100 dark:bg-black rounded-2xl after:absolute after:w-[2px] after:h-10 after:bg-indigo-600 after:top-[50%] after:left-0 after:-translate-y-[50%] "
               >
-                <div>
+                <div className="space-y-4 max-w-sm lg:max-w-xl">
+                  <span className="text-base dark:text-zinc-300 text-zinc-600">
+                    {post.date}
+                  </span>
+                  <h2 className="text-lg font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl">
+                    <a
+                      href={`/posts/${post.slug}`}
+                      className="hover:underline hover:text-zinc-600 dark:hover:text-zinc-300"
+                    >
+                      {post.title}
+                    </a>
+                  </h2>
+                  <button className="px-5 py-1 text-zinc-900 dark:text-zinc-200  border-2 border-zinc-900 dark:border-zinc-200 rounded-full">
+                    Read More
+                  </button>
                 </div>
-                <div>
+                <div className="order-first lg:order-last">
                   <img
-                  src={post.coverImage}
-                  className="w-40 h-40"
-                  alt="landview"
+                    src={post.coverImage}
+                    className="w-32 h-32 lg:w-48 lg:h-48 object-cover rounded-md"
+                    alt="landview"
                   />
                 </div>
-                
               </article>
             );
           })}
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
+          {/* <div className="space-y-10 lg:pl-16 xl:pl-24">
             <form className="space-y-4  rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
               <div className="">
                 <span className="inline-flex items-center">
@@ -163,7 +177,7 @@ export default function Home({ allPosts }: Props) {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </Layout>
@@ -178,7 +192,7 @@ export const getStaticProps = async () => {
     "author",
     "coverImage",
     "excerpt",
-    "id"
+    "id",
   ]);
 
   return {

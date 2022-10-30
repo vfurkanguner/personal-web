@@ -40,22 +40,48 @@ export default function Navbar({}: Props) {
   return (
     <div className="flex items-center justify-between relative">
       <Link href="/">
-        <Image
-          src={Profile}
-          alt="logo"
-          width={32}
-          height={32}
-          className="rounded-full hover:scale-110 transition-all  ring-4 ring-zinc-100 dark:ring-zinc-300/20"
-        />
+        <div className="rounded-full hover:scale-110 transition-all  border border-black">
+          <svg
+            className="rounded-full"
+            width="32px"
+            height="32px"
+            viewBox="0 0 80 80"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="g">
+                <stop stopColor="#06f9c4" offset="0%"></stop>
+                <stop stopColor="#c406f9" offset="100%"></stop>
+              </linearGradient>
+            </defs>
+            <g
+              id="Page-1"
+              stroke="none"
+              strokeWidth="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <rect
+                id="Rectangle"
+                fill="url(#g)"
+                x="0"
+                y="0"
+                width="80"
+                height="80"
+              ></rect>
+            </g>
+          </svg>
+        </div>
       </Link>
-      <ul className="hidden  md:flex justify-between  gap-5   bg-slate-200 dark:bg-zinc-800  rounded-full bg-white/90  text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="hidden  md:flex justify-between  gap-5   bg-black dark:bg-black  rounded-full  text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:text-zinc-200 dark:ring-white/10">
         {navigation.map((item) => (
           <li
             key={item.name}
             className={`first-of-type:ml-4  last-of-type:mr-4 p-2 relative hover:scale-110 transition-all   cursor-pointer ${
               isRouteActive(item.href)
-                ? "text-indigo-500"
-                : "dark:text-zinc-200 text-zinc-900 "
+                ? "text-zinc-50"
+                : "dark:text-zinc-600 text-zinc-600 "
             }`}
           >
             <Link href={item.href}>{item.name}</Link>
@@ -74,12 +100,12 @@ export default function Navbar({}: Props) {
         <button
           type="button"
           onClick={onToggleDarkMode}
-          className="shadow dark:bg-zinc-800 w-14 h-10 hover:ring-zinc-600/5 group hover:dark:ring-white/50  rounded-full  items-center flex ring-1 ring-zinc-900/5 dark:ring-white/10  justify-center  "
+          className="bg-black dark:bg-black w-14 h-10 hover:ring-zinc-600/5 group hover:dark:ring-white/50  rounded-full  items-center flex ring-1 ring-zinc-900/5 dark:ring-white/10  justify-center  "
         >
           {!darkMode ? (
-            <MoonIcon className="h-6 w-6 text-zinc-800 dark:text-zinc-400 group-hover:text-zinc-900 group-hover:dark:text-zinc-200" />
+            <MoonIcon className="h-6 w-6 text-zinc-200 dark:text-zinc-200 group-hover:text-zinc-100 group-hover:dark:text-zinc-200" />
           ) : (
-            <SunIcon className="h-6 w-6 text-zinc-800 dark:text-zinc-400 group-hover:text-amber-500 group-hover:dark:text-zinc-200 " />
+            <SunIcon className="h-6 w-6 text-amber-500 dark:text-amber-500 group-hover:text-amber-500 group-hover:dark:text-zinc-200 " />
           )}
         </button>
       </div>
