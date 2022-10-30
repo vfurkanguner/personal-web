@@ -36,15 +36,15 @@ export default function Home({ allPosts }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="">
-        <div className="min-h-screen flex flex-col justify-center space-y-4 ">
+      <div className="mb-16 sm:mb-32">
+        <div className="min-h-screen flex flex-col justify-center space-y-2 lg:space-y-4 ">
           <h2 className="text-xl bg-gradient-to-r  via-blue-600 bg-clip-text from-red-500 to-indigo-600 text-transparent ">
             Merhaba, benim adım
           </h2>
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-100 lg:text-6xl max-w-4xl">
+          <h1 className="text-4xl font-bold tracking-tight leading-snug lg:leading-relaxed text-zinc-100 lg:text-6xl max-w-4xl">
             V. Furkan Güner
             {"  "}
-            <p className="bg-gradient-to-r leading-relaxed via-indigo-600 bg-clip-text from-blue-500 to-red-600  text-transparent">
+            <p className="bg-gradient-to-r  via-indigo-600 bg-clip-text from-blue-500 to-red-600  text-transparent">
               Web için bir şeyler üretiyorum.
             </p>
           </h1>
@@ -78,17 +78,10 @@ export default function Home({ allPosts }: Props) {
 
           {/* Text */}
           <div className="lg:order-first lg:row-span-2">
-            <h2 className="text-xl bg-gradient-to-r  via-blue-600 bg-clip-text from-indigo-600 to-red-600 text-transparent">
-              I&apos;m Furkan.{" "}
+            <h2 className="text-2xl text-zinc-200 relative after:w-full after:h-px after:absolute after:top-[50%] after:bg-zinc-600 after:ml-2 after:max-w-sm">
+              Hakkımda
             </h2>
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
-              Software developer, founder, and
-              {"  "}
-              <span className="bg-gradient-to-r via-indigo-600 bg-clip-text from-yellow-500 to-blue-600  text-transparent">
-                entrepreneur.
-              </span>
-            </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-400">
+            <div className="mt-6 space-y-7 text-base text-zinc-300">
               <p>
                 I&apos;ve loved making things for as long as I can remember, and
                 wrote my first program when I was 6 years old, just two weeks
