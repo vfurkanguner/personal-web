@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import Image from "next/image";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid/";
-//TODO photo will be improved
-import Profile from "../public/profile.jpeg";
 import Link from "next/link";
 import StyledMenu from "./Menu";
 import { useRouter } from "next/router";
@@ -10,12 +7,13 @@ import { useRouter } from "next/router";
 type Props = {};
 
 export const navigation = [
-  { name: "About", href: "/about" },
+  { name: "Hakkımda", href: "/" },
   {
-    name: "Projects",
+    name: "Projeler",
     href: "/projects",
   },
-  { name: "Uses", href: "/uses" },
+  { name: "Kullandıklarım", href: "/uses" },
+  { name: "Fotoğraflarım", href: "/photos" },
 ];
 
 export default function Navbar({}: Props) {

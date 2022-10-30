@@ -42,28 +42,32 @@ const uses: UsesProps = {
   workstation: [
     {
       id: 1,
-      title: "MacBook Pro",
-      description: "My main workstation.",
-      link: "https://www.apple.com/macbook-pro-13/",
+      title: "MacBook Air M1  ",
+      description:
+        "Apple'ın M chipli modelleri gerçekten çok başarılı. Cihazın hızlı olması üretkenliği arttıran faktörlerden.",
+      link: "https://www.apple.com/tr/macbook-air-m1/",
     },
     {
       id: 2,
-      title: "Dell XPS 13",
-      description: "My secondary workstation.",
-      link: "https://www.dell.com/en-us/shop/dell-laptops/xps-13-laptop/spd/xps-13-9310-laptop",
+      title: "Viewsonic-VX3276",
+      description:
+        "32 inçlik bir büyüklüğe sahip. Ekranı ikiye bölerek kullanmak çok faydalı oluyor.",
+      link: "https://www.hepsiburada.com/viewsonic-vx3276-2k-mhd-32-4ms-display-2xhdmi-wqhd-ips-tasarim-monitor-p-HBV00000AHLL5?ds_rl=1294343&wt_gl=cpc.6802-IT.dsa.camp1636053297adgr69315561984&ds_rl=1294343&gclsrc=ds&gclsrc=ds",
     },
   ],
   software: [
     {
       id: 1,
       title: "Visual Studio Code",
-      description: "My code editor of choice.",
+      description:
+        "Kod editörü olarak kullanıyorum. Birçok eklenti ile birlikte kullanıyorum. Eklentiler kod yazarken çok yardımcı oluyor. Hatta bu açıklamayı da Github Co-Pilot ile yazdım.",
       link: "https://code.visualstudio.com/",
     },
     {
       id: 2,
       title: "iTerm2",
-      description: "My terminal of choice.",
+      description:
+        "Severek kullandığım bir terminal. İçerisinde özelleştirmeler yapabiliyorsunuz. İçine kesinlikle Fig kurun.",
       link: "https://iterm2.com/",
     },
   ],
@@ -71,7 +75,8 @@ const uses: UsesProps = {
     {
       id: 1,
       title: "Figma",
-      description: "My design tool of choice.",
+      description:
+        "Ürün tasarlarken vazgeçilmez bir araç. Figma'nın basitliği en güçlü unsuru bence.",
       link: "https://www.figma.com/",
     },
   ],
@@ -79,14 +84,9 @@ const uses: UsesProps = {
     {
       id: 1,
       title: "Notion",
-      description: "My note-taking app of choice.",
+      description:
+        "Üretkenliği arttıran bir araç. Notion ile her şeyi organize edebiliyorsunuz. Ayrıca relational db'ler ile birlikte kullanıldığında çok güçlü bir araç.",
       link: "https://www.notion.so/",
-    },
-    {
-      id: 2,
-      title: "Bear",
-      description: "My note-taking app of choice.",
-      link: "https://bear.app/",
     },
   ],
 };
@@ -95,10 +95,10 @@ export default function Projects({}: Props) {
   return (
     <Layout>
       <header className="max-w-2xl">
-        <h1>Software I use, gadgets I love, and other things I recommend.</h1>
+        <h1>Severek kullandığım ve önerdiğim  teknolojik zımbırtılar</h1>
         <p className="mt-6">
-          I’ve worked on tons of little projects over the years but these are
-          the ones that I’m most proud of. Many of them are open-source, so if
+          I&apos;ve worked on tons of little projects over the years but these are
+          the ones that I&apos;m most proud of. Many of them are open-source, so if
           you see something that piques your interest, check out the code and
           contribute if you have ideas for how it can be improved.
         </p>
@@ -113,29 +113,27 @@ export default function Projects({}: Props) {
                 key={key}
                 className="grid space-y-8 md:space-y-0 md:grid-cols-3 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
               >
-                <h2 className="text-sm font-semibold text-zinc-800 dark:text-zinc-100 capitalize">
+                <h2 className="text-sm font-semibold text-zinc-100 capitalize">
                   {key}
                 </h2>
                 <ul className="flex-col flex col-span-2 space-y-6">
-                  {getKey.map(
-                    (use): any => (
-                      <li
-                        key={use.id}
-                        className="group relative flex flex-col space-y-4"
-                      >
-                        <h3 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                          {use.title}
-                        </h3>
-                        <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                          {use.description}
-                        </p>
-                        <p className="group-hover:text-green-600 hover:cursor-pointer relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                          <LinkIcon className="inline-block w-4 h-4 mr-1" />
-                          {use.link}
-                        </p>
-                      </li>
-                    )
-                  )}
+                  {getKey.map((use): any => (
+                    <li
+                      key={use.id}
+                      className="group relative flex flex-col space-y-4"
+                    >
+                      <h3 className="text-base font-semibold tracking-tight text-zinc-100">
+                        {use.title}
+                      </h3>
+                      <p className="relative z-10 mt-2 text-sm text-zinc-400">
+                        {use.description}
+                      </p>
+                      <p className="group-hover:text-indigo-600 hover:cursor-pointer relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                        <LinkIcon className="inline-block w-4 h-4 mr-1" />
+                        {use.link}
+                      </p>
+                    </li>
+                  ))}
                 </ul>
               </li>
             );
