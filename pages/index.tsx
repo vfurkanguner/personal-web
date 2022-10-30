@@ -47,19 +47,19 @@ export default function Home({ allPosts }: Props) {
           <h2 className="my-4 text-xl bg-gradient-to-r dark:via-blue-600 via-blue-600 bg-clip-text from-indigo-600 to-red-600 dark:from-indigo-600 dark:to-red-500 text-transparent">
             I&apos;m Furkan.{" "}
           </h2>
-          <h1 className="my-4 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            <p>Software designer, founder,</p>
+          <h1 className="my-4">
+            <span className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">Software designer, founder,</span>
             {"  "}
-            <p className="my-4 bg-gradient-to-r dark:via-indigo-600 via-indigo-600 bg-clip-text from-yellow-500 to-blue-600 dark:from-yellow-600 dark:to-blue-600 text-transparent">
+            <span className="flex my-4 bg-gradient-to-r dark:via-indigo-600 via-indigo-600 bg-clip-text from-yellow-500 to-blue-600 dark:from-yellow-600 dark:to-blue-600 text-transparent">
               and amateur astronaut.
-            </p>
+            </span>
           </h1>
           <div className="my-4 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I&apos;m  Furkan, a software designer and entrepreneur based in New
-              York City. I&apos;m the founder and CEO of Planetaria, where we develop
-              technologies that empower regular people to explore space on their
-              own terms.
+              I&apos;m Furkan, a software designer and entrepreneur based in New
+              York City. I&apos;m the founder and CEO of Planetaria, where we
+              develop technologies that empower regular people to explore space
+              on their own terms.
             </p>
           </div>
         </fieldset>
@@ -71,7 +71,7 @@ export default function Home({ allPosts }: Props) {
               <div
                 key={image.id}
                 className={classNames(
-                  "grayscale hover:grayscale-0  w-full my-6 rotate-2 hover:rotate-0",
+                  "grayscale relative hover:grayscale-0  w-full my-6  group",
                   index % 2 === 0 ? "aspect-square" : " aspect-video"
                 )}
               >
@@ -84,10 +84,13 @@ export default function Home({ allPosts }: Props) {
                   decoding="async"
                   data-nimg="future"
                   className={classNames(
-                    "grayscale hover:grayscale-0  w-full h-full object-cover rounded-lg"
+                    "grayscale group-hover:scale-105 transition-all group-hover:grayscale-0  w-full h-full object-cover rounded-lg"
                   )}
                   loading="lazy"
                 />
+                <span className="hidden group-hover:flex text-white text-lg group-hover:scale-110 absolute  transition top-[50%] left-[50%] rounded-lg  -translate-y-[50%] -translate-x-[50%] bg-black px-4 py-2">
+                  {image.title}
+                </span>
               </div>
             ))}
           </div>
@@ -98,35 +101,18 @@ export default function Home({ allPosts }: Props) {
             return (
               <article
                 key={post.id}
-                className="group relative flex flex-col items-start"
+                className="group relative flex"
               >
-                <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                  <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
-                  <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
-                  <span className="relative z-10">{post.title}</span>
-                </h2>
-                <time
-                  className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-                  dateTime="2022-09-05"
-                >
-                  <span
-                    className="absolute inset-y-0 left-0 flex items-center"
-                    aria-hidden="true"
-                  >
-                    <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                  </span>
-                  {post.date}
-                </time>
-                <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                  {post.excerpt}
-                </p>
-                <div
-                  aria-hidden="true"
-                  className="relative z-10 mt-4 flex items-center text-sm font-medium text-indigo-500"
-                >
-                  Read article
-                  <ChevronRightIcon className="w-4 h-4" />
+                <div>
                 </div>
+                <div>
+                  <img
+                  src={post.coverImage}
+                  className="w-40 h-40"
+                  alt="landview"
+                  />
+                </div>
+                
               </article>
             );
           })}
@@ -192,6 +178,7 @@ export const getStaticProps = async () => {
     "author",
     "coverImage",
     "excerpt",
+    "id"
   ]);
 
   return {

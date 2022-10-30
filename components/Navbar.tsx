@@ -67,7 +67,9 @@ export default function Navbar({}: Props) {
       </ul>
 
       <div className="inline-flex items-center gap-x-2">
-        <StyledMenu />
+        <div className="lg:hidden ">
+          <StyledMenu />
+        </div>
 
         <button
           type="button"

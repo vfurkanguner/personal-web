@@ -23,7 +23,6 @@ a {
 }
 
 
-
 @layer base {
   body {
     @apply flex h-full flex-col bg-zinc-50 dark:bg-black text-zinc-800 dark:text-zinc-200;
