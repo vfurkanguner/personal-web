@@ -38,7 +38,6 @@ export default function photos({}: Props) {
                 className={classNames(
                   "grayscale group-hover:scale-105 transition-all group-hover:grayscale-0  w-full h-full object-cover rounded-lg"
                 )}
-                loading="lazy"
               />
               <span className="hidden group-hover:flex text-white text-lg group-hover:scale-110 absolute  transition top-[50%] left-[50%] rounded-lg  -translate-y-[50%] -translate-x-[50%] bg-black px-4 py-2">
                 {image.title}

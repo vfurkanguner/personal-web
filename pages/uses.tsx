@@ -52,7 +52,7 @@ const uses: UsesProps = {
       title: "Viewsonic-VX3276",
       description:
         "32 inçlik bir büyüklüğe sahip. Ekranı ikiye bölerek kullanmak çok faydalı oluyor.",
-      link: "https://www.hepsiburada.com/viewsonic-vx3276-2k-mhd-32-4ms-display-2xhdmi-wqhd-ips-tasarim-monitor-p-HBV00000AHLL5?ds_rl=1294343&wt_gl=cpc.6802-IT.dsa.camp1636053297adgr69315561984&ds_rl=1294343&gclsrc=ds&gclsrc=ds",
+      link: "https://tinyurl.com/pem48y26",
     },
   ],
   software: [
@@ -106,13 +106,13 @@ export default function Projects({}: Props) {
       </header>
 
       <aside className="mt-16 sm:mt-20">
-        <ul className="grid grid-cols-1 space-y-16">
+        <ul className="flex flex-col  space-y-16 ">
           {Object.keys(uses).map((key: string) => {
             const getKey = uses[key as keyof UsesProps];
             return (
               <li
                 key={key}
-                className="grid space-y-8 md:space-y-0 md:grid-cols-3 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
+                className="grid space-y-8 grid-cols-1 md:space-y-0 md:grid-cols-3 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
               >
                 <h2 className="text-sm font-semibold text-zinc-100 capitalize">
                   {key}
@@ -131,7 +131,13 @@ export default function Projects({}: Props) {
                       </p>
                       <p className="group-hover:text-indigo-600 hover:cursor-pointer relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
                         <LinkIcon className="inline-block w-4 h-4 mr-1" />
-                        {use.link}
+                        <a
+                        href={use.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        >
+                          {use.link}
+                        </a>
                       </p>
                     </li>
                   ))}

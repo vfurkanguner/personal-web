@@ -62,7 +62,7 @@ export default function Navbar({}: Props) {
           </svg>
         </div>
       </Link>
-      <ul className="hidden  md:flex justify-between  gap-5   bg-black dark:bg-black  rounded-full  text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:text-zinc-200 dark:ring-white/10">
+      <ul className="hidden  md:flex justify-between  gap-5  bg-black  rounded-full  text-sm font-medium   ring-1 ring-zinc-900/5 backdrop-blur text-zinc-200 ">
         {navigation.map((item) => (
           <li
             key={item.name}

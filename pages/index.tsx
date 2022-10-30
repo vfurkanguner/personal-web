@@ -45,7 +45,7 @@ export default function Home({ allPosts }: Props) {
             V. Furkan Güner
             {"  "}
             <p className="bg-gradient-to-r  via-indigo-600 bg-clip-text from-blue-500 to-red-600  text-transparent">
-              Web için bir şeyler üretiyorum.
+              Web için şeyler üretiyorum.
             </p>
           </h1>
 
@@ -78,7 +78,7 @@ export default function Home({ allPosts }: Props) {
 
           {/* Text */}
           <div className="lg:order-first lg:row-span-2">
-            <h2 className="text-2xl text-zinc-200 relative after:w-full after:h-px after:absolute after:top-[50%] after:bg-zinc-600 after:ml-2 after:max-w-sm">
+            <h2 className="text-2xl text-zinc-200 relative after:w-40 after:lg:w-full after:h-px after:absolute after:top-[50%] after:bg-zinc-600 after:ml-2 after:max-w-sm">
               Hakkımda
             </h2>
             <div className="mt-6 space-y-7 text-base text-zinc-300">
