@@ -1,10 +1,10 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/20/solid";
+import {  XMarkIcon, Bars3Icon  } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { navigation } from "./Navbar";
 
-export default function MyModal() {
+export default function StyledMenu() {
   let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -21,11 +21,10 @@ export default function MyModal() {
         <button
           type="button"
           onClick={openModal}
-          className="inline-flex w-full justify-center shadow dark:bg-zinc-800  px-4 py-2 text-sm font-medium text-zinc-800 dark:text-zinc-200 hover:ring-zinc-600/5 group hover:dark:ring-white/50  rounded-full  items-center ring-1 ring-zinc-900/5 dark:ring-white/10 "
+          className="inline-flex w-full justify-center shadow bg-zinc-800  px-2 py-2 text-sm font-medium text-zinc-200 hover:ring-zinc-600/5 group hover:dark:ring-white/50  rounded-full  items-center ring-1 ring-white/10 "
         >
-          Menu
-          <ChevronDownIcon
-            className="ml-2 -mr-1 h-5 w-5 text-zinc-800 dark:text-zinc-200"
+          <Bars3Icon
+            className="h-5 w-5 text-zinc-200"
             aria-hidden="true"
           />
         </button>
@@ -71,7 +70,7 @@ export default function MyModal() {
                   <div className="mt-2">
                     <ul className="grid">
                       {navigation.map((nav) => (
-                        <li key={nav.name} className="font-mono py-6 pl-4 text-4xl hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 dark:from-indigo-600 dark:to-blue-500 hover:text-transparent hover:bg-clip-text lg:text-7xl transition-all hover:scale-105 text-zinc-200 dark:text-zinc-200 font-semibold cursor-pointer">
+                        <li key={nav.name} className="font-mono py-6 text-2xl md:text-4xl hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 dark:from-indigo-600 dark:to-blue-500 hover:text-transparent hover:bg-clip-text lg:text-5xl transition-all hover:scale-105 text-zinc-200 dark:text-zinc-200 font-semibold cursor-pointer">
                           <Link href={nav.href}>{nav.name}</Link>
                         </li>
                       ))}

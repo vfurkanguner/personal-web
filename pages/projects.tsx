@@ -28,6 +28,7 @@ const projects = [
 export default function Projects({}: Props) {
   return (
     <Layout>
+      <div className=" my-16 sm:my-32">
       <div className="max-w-2xl">
         <h1>Things I’ve made trying to put my dent in the universe.</h1>
         <p className="mt-6">
@@ -45,18 +46,18 @@ export default function Projects({}: Props) {
               key={project.id}
               className="group relative flex flex-col space-y-4 group hover:cursor-pointer"
             >
-              <h3 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+              <h3 className="mt-6 text-base font-semibold text-zinc-100">
+                <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95  opacity-0 transition group-hover:scale-100 group-hover:opacity-100 bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
                 <a>
                   <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
                   <span className="relative z-10">{project.title}</span>
                 </a>
               </h3>
               <a href={project.href} className="">
-                <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                <p className="relative z-10 mt-2 text-sm text-zinc-400">
                   {project.description}
                 </p>
-                <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-green-500 dark:text-zinc-200">
+                <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-200 transition group-hover:text-indigo-500 ">
                   <LinkIcon className="flex-shrink-0 w-4 h-4 mr-2" />
                   <span>github.com</span>
                 </p>
@@ -65,6 +66,7 @@ export default function Projects({}: Props) {
           ))}
         </ul>
       </aside>
+      </div>
     </Layout>
   );
 }

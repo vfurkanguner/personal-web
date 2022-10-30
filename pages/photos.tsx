@@ -9,6 +9,7 @@ type Props = {};
 export default function photos({}: Props) {
   return (
     <Layout>
+        <div className=" my-16 sm:my-32">
       <div className="space-y-4 max-w-xl">
         <h1>Çektiğim bazı fotoğraflar</h1>
         <p>
@@ -46,6 +47,7 @@ export default function photos({}: Props) {
           ))}
         </div>
       </figcaption>
+        </div>
     </Layout>
   );
 }

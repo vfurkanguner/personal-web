@@ -66,7 +66,7 @@ export default function Layout({ children }: Props) {
             <header className="mx-auto max-w-2xl lg:max-w-5xl pt-4 px-4 md:px-6 lg:px-8">
               <Navbar />
             </header>
-            <main className="mx-auto max-w-2xl lg:max-w-5xl px-4 md:px-6 lg:px-8 my-16 sm:my-32">
+            <main className="mx-auto max-w-2xl lg:max-w-5xl px-4 md:px-6 lg:px-8">
               {children}
             </main>
           

@@ -17,23 +17,13 @@ export const navigation = [
 ];
 
 export default function Navbar({}: Props) {
-  const [darkMode, setDarkMode] = React.useState(true);
   const router = useRouter();
 
   const isRouteActive = (route: string) => {
     return route === router.pathname;
   };
 
-  const onToggleDarkMode = () => {
-    const html = document.querySelector("html");
-    if (html?.classList.contains("dark")) {
-      html.classList.remove("dark");
-      setDarkMode(false);
-    } else {
-      html?.classList.add("dark");
-      setDarkMode(true);
-    }
-  };
+  
 
   return (
     <div className="flex items-center justify-between relative">
@@ -58,7 +48,7 @@ export default function Navbar({}: Props) {
               stroke="none"
               strokeWidth="1"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             >
               <rect
                 id="Rectangle"
@@ -94,18 +84,6 @@ export default function Navbar({}: Props) {
         <div className="lg:hidden ">
           <StyledMenu />
         </div>
-
-        <button
-          type="button"
-          onClick={onToggleDarkMode}
-          className="bg-black dark:bg-black w-14 h-10 hover:ring-zinc-600/5 group hover:dark:ring-white/50  rounded-full  items-center flex ring-1 ring-zinc-900/5 dark:ring-white/10  justify-center  "
-        >
-          {!darkMode ? (
-            <MoonIcon className="h-6 w-6 text-zinc-200 dark:text-zinc-200 group-hover:text-zinc-100 group-hover:dark:text-zinc-200" />
-          ) : (
-            <SunIcon className="h-6 w-6 text-amber-500 dark:text-amber-500 group-hover:text-amber-500 group-hover:dark:text-zinc-200 " />
-          )}
-        </button>
       </div>
     </div>
   );

@@ -94,6 +94,7 @@ const uses: UsesProps = {
 export default function Projects({}: Props) {
   return (
     <Layout>
+      <div className=" my-16 sm:my-32">
       <header className="max-w-2xl">
         <h1>Severek kullandığım ve önerdiğim  teknolojik zımbırtılar</h1>
         <p className="mt-6">
@@ -140,6 +141,7 @@ export default function Projects({}: Props) {
           })}
         </ul>
       </aside>
+      </div>
     </Layout>
   );
 }
