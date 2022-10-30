@@ -37,11 +37,11 @@ export default function Home({ allPosts }: Props) {
       </Head>
 
       <div className="mb-16 sm:mb-32">
-        <div className="min-h-screen flex flex-col justify-center space-y-2 lg:space-y-4 ">
+        <div className="min-h-screen flex flex-col justify-center">
           <h2 className="text-xl bg-gradient-to-r  via-blue-600 bg-clip-text from-red-500 to-indigo-600 text-transparent ">
             Merhaba, benim adım
           </h2>
-          <h1 className="text-4xl font-bold tracking-tight leading-snug lg:leading-relaxed text-zinc-100 lg:text-6xl max-w-4xl">
+          <h1 className="text-4xl font-bold tracking-tight leading-snug lg:leading-normal text-zinc-100 lg:text-6xl max-w-4xl">
             V. Furkan Güner
             {"  "}
             <p className="bg-gradient-to-r  via-indigo-600 bg-clip-text from-blue-500 to-red-600  text-transparent">
