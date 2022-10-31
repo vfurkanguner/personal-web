@@ -3,6 +3,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import images from "../constants/images";
 import classNames from "../utils/classNames";
+import Image from "next/image";
 
 type Props = {};
 
@@ -27,9 +28,11 @@ export default function photos({}: Props) {
                 index % 2 === 0 ? "aspect-square" : " aspect-video"
               )}
             >
-              <img
+              <Image
                 alt=""
                 sizes="(min-width: 640px) 18rem, 11rem"
+                placeholder="blur"
+                blurDataURL="/images/placeholder.png"
                 src={image.src}
                 width="3744"
                 height="5616"

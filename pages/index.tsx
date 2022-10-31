@@ -180,7 +180,7 @@ export default function Home({ allPosts }: Props) {
             return (
               <article
                 key={post.id}
-                className="space-y-4 lg:space-y-0 p-8 group relative flex flex-col lg:flex-row justify-between bg-black rounded-2xl after:absolute after:w-[2px] after:h-10 after:bg-indigo-600 after:top-[50%] after:left-0 after:-translate-y-[50%] "
+                className="hover:bg-zinc-800 space-y-4 lg:space-y-0 p-8 group relative flex flex-col lg:flex-row justify-between bg-black rounded-2xl after:absolute after:w-[2px] after:h-10 after:bg-indigo-600 after:top-[50%] after:left-0 after:-translate-y-[50%] "
               >
                 <div className="space-y-4 max-w-sm lg:max-w-xl">
                   <span className="text-base text-zinc-300 ">{post.date}</span>
