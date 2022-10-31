@@ -74,7 +74,7 @@ export default function Navbar({}: Props) {
           >
             <Link href={item.href}>{item.name}</Link>
             {isRouteActive(item.href) ? (
-              <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-indigo-500/0 via-indigo-500/40 to-indigo-500/0 dark:from-indigo-400/0 dark:via-indigo-400/40 dark:to-indigo-400/0" />
+              <span className="absolute inset-x-1 -bottom-px h-[2px] bg-gradient-to-r from-indigo-500/0 via-indigo-500/40 to-indigo-500/0 " />
             ) : null}
           </li>
         ))}
