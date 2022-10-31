@@ -3,6 +3,8 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import { BriefcaseIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { getAllPosts } from "../lib/api";
+import Logo from "../public/soldd.jpeg";
+import Image from "next/image";
 
 type Props = {
   allPosts: PostType[];
@@ -28,6 +30,11 @@ type AuthorType = {
 };
 
 export default function Home({ allPosts }: Props) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    alert("Daha sonra eklenecek :)");
+  };
+
   return (
     <Layout>
       <Head>
@@ -45,15 +52,15 @@ export default function Home({ allPosts }: Props) {
             V. Furkan Güner
             {"  "}
             <p className="bg-gradient-to-r  via-indigo-600 bg-clip-text from-blue-500 to-red-600  text-transparent">
-              Web için şeyler üretiyorum.
+              Web için bir şeyler yapıyorum.
             </p>
           </h1>
 
           <p className="max-w-lg tracking-wide">
-            I&apos;ve loved making things for as long as I can remember, and
-            wrote my first program when I was 6 years old, just two weeks after
-            my mom brought home the brand new Macintosh LC 550 that I taught
-            myself to type on.
+            Dijital deneyimler oluşturma (ve bazen tasarlama) konusunda çalışan
+            bir yazılım geliştiricisiyim. Problem çözmekten ve yeni ürünler
+            ortaya çıkarmaktan keyif alıyorum. Aynı zamanda Soldd adlı bir
+            start-up&apos;da kurucuyum.
           </p>
         </div>
 
@@ -83,54 +90,58 @@ export default function Home({ allPosts }: Props) {
             </h2>
             <div className="mt-6 space-y-7 text-base text-zinc-300">
               <p>
-                I&apos;ve loved making things for as long as I can remember, and
-                wrote my first program when I was 6 years old, just two weeks
-                after my mom brought home the brand new Macintosh LC 550 that I
-                taught myself to type on.
+                Merhaba! Benim adım Furkan ve insanların hayatını kolaylaştıran
+                şeyler yapmayı seviyorum. Yazılıma ilk 2015&apos;de HTML& CSS
+                öğrenerek başladım. Ondan sonra da JavaScript öğrenerek çeşitli
+                uygulamalar üretmeye başladım.
               </p>
               <p>
-                I&apos;ve gone through a number of phases in my career, and each
-                of them has informed my current work ethos and philosophy. I
-                have excelled in a number of project management roles in diverse
-                industries, and believe that my number one asset is my ability
-                to adapt to any challenge that is thrown my way.
+                2015 yılında çoğunlukla temel HTML ve CSS yaparak kodlama
+                öğrenmeye başladım, ancak 2019&apos;da programlama ve web
+                geliştirme konusunda ciddileşmeye karar verdim. Tasarım tutkum
+                vardı, bu yüzden Figma&apos;yı öğrenmek için de zaman harcadım.
+                2020&apos;de kendi start-up şirketimin kurucu ortağı oldum.
               </p>
               <p>
-                I&apos;ve loved making things for as long as I can remember, and
-                wrote my first program when I was 6 years old, just two weeks
-                after my mom brought home the brand new Macintosh LC 550 that I
-                taught myself to type on.
+                React ve NextJS gibi JavaScript çerçevelerinin yanı sıra HTML5,
+                CSS3 ve Tailwind gibi HTML5 stillendirme dilleri konusunda
+                deneyimim var. En sevdiğim teknoloji yığını, NodeJS backendine
+                sahip Tailwind/NextJS/Prisma.
               </p>
               <p>
-                Today, I&apos;m the founder of Planetaria, where we&apos;re
-                working on civilian space suits and manned shuttle kits you can
-                assemble at home so that the next generation of kids really can
-                make it to orbit — from the comfort of their own backyards.
+                En son çalıştığım teknolojiler:
               </p>
+              <ul className="grid grid-cols-2 gap-4 text-sm font-mono">
+                <li className="before:content-['▹'] before:mr-2 before:text-zinc-500 ">JavaScript</li>
+                <li className="before:content-['▹'] before:mr-2 before:text-zinc-500 ">TypeScript</li>
+                <li className="before:content-['▹'] before:mr-2 before:text-zinc-500 ">React</li>
+                <li className="before:content-['▹'] before:mr-2 before:text-zinc-500 ">NextJS</li>
+                <li className="before:content-['▹'] before:mr-2 before:text-zinc-500 ">Express</li>
+                <li className="before:content-['▹'] before:mr-2 before:text-zinc-500 ">Prisma</li>
+              </ul>
             </div>
           </div>
 
           {/* Icons */}
           <div className="lg:pl-20">
             <div className="space-y-10">
-              <form className="space-y-4  rounded-2xl border  p-6 bg-zinc-800 border-zinc-700/40 relative after:absolute after:w-[2px] after:h-10 after:bg-indigo-600 after:top-[50%] after:left-0 after:-translate-y-[50%]">
+              <form onSubmit={handleSubmit} className="space-y-4  rounded-2xl border  p-6 bg-zinc-800 border-zinc-700/40 relative after:absolute after:w-[2px] after:h-10 after:bg-indigo-600 after:top-[50%] after:left-0 after:-translate-y-[50%]">
                 <div className="">
                   <span className="inline-flex items-center text-zinc-50">
                     <EnvelopeIcon className="w-5 h-5 mr-2 text-zinc-500" />
-                    Stay up to date
+                    Takipte kalın!
                   </span>
                   <p className="text-sm">
-                    Get notified when I publish something new, and unsubscribe
-                    at any time.
+                    Yeni bir şeyler ürettiğim zaman ilk siz haberdar olun.
                   </p>
                 </div>
                 <div className="mt-6 flex">
                   <input
-                    className="min-w-0 bg-zinc-900 flex-auto appearance-none rounded-md border border-zinc-900/10 px-3 py-2 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:outline-none focus:ring-4     focus:border-indigo-500 focus:ring-indigo-400/10 sm:text-sm"
+                    className="min-w-0 text-zinc-50 bg-zinc-900 flex-auto appearance-none rounded-md border border-zinc-900/10 px-3 py-2 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:outline-none focus:ring-4     focus:border-indigo-500 focus:ring-indigo-400/10 sm:text-sm"
                     placeholder="Email address"
                   />
-                  <button className="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-black font-semibold text-zinc-100   hover:bg-zinc-900 active:bg-zinc-700 active:text-zinc-100/70 ml-4 flex-none">
-                    Join
+                  <button type="submit" className="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-black font-semibold text-zinc-100   hover:bg-zinc-900 active:bg-zinc-700 active:text-zinc-100/70 ml-4 flex-none">
+                    Katıl
                   </button>
                 </div>
               </form>
@@ -138,14 +149,14 @@ export default function Home({ allPosts }: Props) {
               <div className="rounded-2xl border bg-zinc-800 border-zinc-700/40 p-6 relative after:absolute after:w-[2px] after:h-10 after:bg-indigo-600 after:top-[50%] after:left-0 after:-translate-y-[50%]">
                 <h3 className="text-base tracking-tight items-center inline-flex text-zinc-100">
                   <BriefcaseIcon className="w-5 h-5 mr-2 text-zinc-500" />
-                  <span className="relative z-10">Work</span>
+                  <span className="relative z-10">Deneyim</span>
                 </h3>
 
                 <ul>
                   <li className="mt-2 text-sm flex gap-4 text-zinc-400 ">
-                    <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                      <img
-                        src="https://i.pravatar.cc/300"
+                    <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full  ring-zinc-900/5 border border-zinc-700/50 bg-zinc-800 ring-1">
+                      <Image
+                        src={Logo}
                         alt=""
                         className="w-7 h-7 rounded-full"
                       />
@@ -155,7 +166,7 @@ export default function Home({ allPosts }: Props) {
                       <p className="font-light">Founder & Frontend developer</p>
                     </div>
 
-                    <span>2020-Present</span>
+                    <span>2020-Halen</span>
                   </li>
                 </ul>
               </div>
@@ -182,7 +193,7 @@ export default function Home({ allPosts }: Props) {
                     </a>
                   </h2>
                   <button className="px-5 py-1 text-zinc-200  border-2 border-zinc-200 rounded-full">
-                    Read More
+                    Devamını oku
                   </button>
                 </div>
                 <div className="order-first lg:order-last">
