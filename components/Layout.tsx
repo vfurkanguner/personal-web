@@ -11,6 +11,7 @@ export default function Layout({ children }: Props) {
   return (
     <div className="">
       <Head>
+      <meta http-equiv="Content-Security-Policy" content="default-src https://vitals.vercel-insights.com; child-src 'none'; object-src 'none'" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
