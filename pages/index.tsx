@@ -7,6 +7,7 @@ import About from "../components/About";
 import Email from "../components/Email";
 import Work from "../components/Work";
 import BlogBox from '../components/BlogBox';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   allPosts: PostType[];
@@ -32,6 +33,7 @@ type AuthorType = {
 };
 
 export default function Home({ allPosts }: Props) {
+  const { t } = useTranslation();
   return (
     <Layout>
       <div className="mb-16 sm:mb-32">
@@ -69,7 +71,7 @@ export default function Home({ allPosts }: Props) {
         </div>
 
         <div className="mt-16 lg:mt-20 space-y-4 ">
-          <h3 className="text-2xl font-medium">Yazdıklarım</h3>
+          <h3 className="text-2xl font-medium">{t('articles')}</h3>
           {allPosts.map((post) => {
             return (
               <BlogBox key={post.id} post={post} />

@@ -1,6 +1,7 @@
 import React from "react";
 import { LinkIcon } from "@heroicons/react/24/solid";
 import Layout from "../components/Layout";
+import { useTranslation } from 'react-i18next';
 
 type Props = {};
 
@@ -43,15 +44,13 @@ const uses: UsesProps = {
     {
       id: 1,
       title: "MacBook Air M1  ",
-      description:
-        "Apple'ın M chipli modelleri gerçekten çok başarılı. Cihazın hızlı olması üretkenliği arttıran faktörlerden.",
+      description: "used.laptop.desc",
       link: "https://www.apple.com/tr/macbook-air-m1/",
     },
     {
       id: 2,
       title: "Viewsonic-VX3276",
-      description:
-        "32 inçlik bir büyüklüğe sahip. Ekranı ikiye bölerek kullanmak çok faydalı oluyor.",
+      description: "used.screen",
       link: "https://tinyurl.com/pem48y26",
     },
   ],
@@ -59,15 +58,13 @@ const uses: UsesProps = {
     {
       id: 1,
       title: "Visual Studio Code",
-      description:
-        "Kod editörü olarak kullanıyorum. Birçok eklenti ile birlikte kullanıyorum. Eklentiler kod yazarken çok yardımcı oluyor. Hatta bu açıklamayı da Github Co-Pilot ile yazdım.",
+      description: "used.visual.studio",
       link: "https://code.visualstudio.com/",
     },
     {
       id: 2,
       title: "iTerm2",
-      description:
-        "Severek kullandığım bir terminal. İçerisinde özelleştirmeler yapabiliyorsunuz. İçine kesinlikle Fig kurun.",
+      description: "used.iterm",
       link: "https://iterm2.com/",
     },
   ],
@@ -75,8 +72,7 @@ const uses: UsesProps = {
     {
       id: 1,
       title: "Figma",
-      description:
-        "Ürün tasarlarken vazgeçilmez bir araç. Figma'nın basitliği en güçlü unsuru bence.",
+      description: "used.figma",
       link: "https://www.figma.com/",
     },
   ],
@@ -84,22 +80,21 @@ const uses: UsesProps = {
     {
       id: 1,
       title: "Notion",
-      description:
-        "Üretkenliği arttıran bir araç. Notion ile her şeyi organize edebiliyorsunuz. Ayrıca relational db'ler ile birlikte kullanıldığında çok güçlü bir araç.",
+      description: "used.notion",
       link: "https://www.notion.so/",
     },
   ],
 };
 
-export default function Projects({}: Props) {
+export default function Uses({}: Props) {
+  const { t } = useTranslation();
   return (
     <Layout>
       <div className=" my-16 sm:my-32">
         <header className="max-w-2xl">
-          <h1>Severek kullandığım teknolojik zımbırtılar</h1>
+          <h1> {t('used.title')} </h1>
           <p className="mt-6">
-            Kod yazarken veya günlük hayatta üretkenliğimi arttıran
-            ürünleri buraya linkleriyle beraber ekliyorum.  
+          {t('used.desc')}
           </p>
         </header>
 
@@ -113,7 +108,7 @@ export default function Projects({}: Props) {
                   className="grid space-y-8 grid-cols-1 md:space-y-0 md:grid-cols-3 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
                 >
                   <h2 className="text-sm font-semibold text-zinc-100 capitalize">
-                    {key}
+                    {t(key)}
                   </h2>
                   <ul className="flex-col flex col-span-2 space-y-6">
                     {getKey.map((use): any => (
@@ -122,10 +117,10 @@ export default function Projects({}: Props) {
                         className="group relative flex flex-col space-y-4"
                       >
                         <h3 className="text-base font-semibold tracking-tight text-zinc-100">
-                          {use.title}
+                          {t(use.title)}
                         </h3>
                         <p className="relative z-10 mt-2 text-sm text-zinc-400">
-                          {use.description}
+                          {t(use.description)}
                         </p>
                         <p className="group-hover:text-indigo-600 hover:cursor-pointer relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
                           <LinkIcon className="inline-block w-4 h-4 mr-1" />

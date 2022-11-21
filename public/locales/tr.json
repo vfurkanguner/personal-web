@@ -2,5 +2,61 @@
     "navbar.about": "Hakkımda",
     "navbar.project": "Projeler",
     "navbar.used": "Kullandıklarım",
-    "navbar.photos": "Fotoğraflarım"
+    "navbar.photos": "Fotoğraflar",
+
+    "hero.hello": "Merhaba, ben",
+    "hero.name": "{{name}}",
+    "hero.title": "Web için bir şeyler yapıyorum.",
+    "hero.desc": "Dijital deneyimler oluşturma (ve bazen tasarlama) konusunda çalışan bir yazılım geliştiricisiyim. Problem çözmekten ve yeni ürünler ortaya çıkarmaktan keyif alıyorum. Aynı zamanda Soldd adlı bir start-up'da kurucuyum.",
+
+    "about": "Hakkımda",
+    "about.paragraph.one": "Merhaba! Benim adım Furkan ve insanların hayatını kolaylaştıran şeyler yapmayı seviyorum. Yazılıma ilk 2015'de HTML& CSS öğrenerek başladım. Ondan sonra da JavaScript öğrenerek çeşitli uygulamalar üretmeye başladım.",
+    "about.paragraph.two": "2015 yılında çoğunlukla temel HTML ve CSS yaparak kodlama öğrenmeye başladım, ancak 2019'da programlama ve web geliştirme konusunda ciddileşmeye karar verdim. Tasarım tutkum vardı, bu yüzden Figma'yı öğrenmek için de zaman harcadım. 2020'de kendi start-up şirketimin kurucu ortağı oldum.",
+    "about.paragraph.three": "React ve NextJS gibi JavaScript çerçevelerinin yanı sıra HTML5, CSS3 ve Tailwind gibi HTML5 stillendirme dilleri konusunda deneyimim var. En sevdiğim teknoloji yığını, NodeJS backendine sahip Tailwind/NextJS/Prisma.",
+    "about.latest.tech": "En son çalıştığım teknolojiler:",
+
+    "articles": "Yazdıklarım",
+
+    "email.section.title": "Takipte kalın!",
+    "email.section.desc": "Yeni yazılar, projeler ve daha fazlası hakkında e-postalar almak için e-posta adresinizi girin.",
+    "email.section.button": "Abone ol",
+    "email.section.placeholder": "E-posta adresinizi girin",
+
+    "experience": "Deneyim",
+    "experience.present": "Halen",
+
+    "projects.title": "Pişirdiğimiz bazı şeyler 🍪",
+    "projects.desc": "Kendi başıma birçok proje üzerinde çalışıyorum. Fakat hepsini canlıya alamıyorum. Bu yüzden bazılarına buradan ulaşabilirsiniz. Kodların çoğu açık kaynaklıdır. Eğer ilginizi çeken bir şey varsa kodları inceleyebilir ve geliştirmek için katkıda bulunabilirsiniz.",
+    "projects.build.with": "Aşağıdaki teknolojiler ile yapıldı",
+
+    "projects.soldd.title": "Soldd: Handmade Marketplace",
+    "projects.soldd.desc": "El işi ürünlerin satışını sağlayan bir platform",
+
+    "projects.tailbuild.title": "Tailbuild: Tailwind CSS Web site Builder",
+    "projects.tailbuild.desc": "Tailwind CSS ile web siteleri oluşturmanıza yardımcı olan bir araç",
+
+    "projects.resumeto.title": "Resumeto",
+    "projects.resumeto.desc": "Özgeçmişinizden web sitesi oluşturmanıza yardımcı olan bir araç",
+
+    "used.title": "Severek kullandığım teknolojik zımbırtılar",
+    "used.desc": "Kod yazarken veya günlük hayatta üretkenliğimi arttıran ürünleri buraya linkleriyle beraber ekliyorum.",
+
+    "workstation": "İş istasyonu",
+    "software": "Yazılım",
+    "design": "Tasarım",
+    "productivity": "Üretkenlik",
+
+    "used.laptop.desc": "Apple'ın M chipli modelleri gerçekten çok başarılı. Cihazın hızlı olması üretkenliği arttıran faktörlerden.",
+    "used.screen": "32 inçlik bir büyüklüğe sahip. Ekranı ikiye bölerek kullanmak çok faydalı oluyor.",
+    "used.visual.studio": "Kod editörü olarak kullanıyorum. Birçok eklenti ile birlikte kullanıyorum. Eklentiler kod yazarken çok yardımcı oluyor. Hatta bu açıklamayı da Github Co-Pilot ile yazdım.",
+    "used.iterm": "Severek kullandığım bir terminal. İçerisinde özelleştirmeler yapabiliyorsunuz. İçine kesinlikle Fig kurun.",
+    "used.figma": "Ürün tasarlarken vazgeçilmez bir araç. Figma'nın basitliği en güçlü unsuru bence.",
+    "used.notion": "Üretkenliği arttıran bir araç. Notion ile her şeyi organize edebiliyorsunuz. Ayrıca relational db'ler ile birlikte kullanıldığında çok güçlü bir araç.",
+
+    "photos.title": "Çektiğim bazı fotoğraflar",
+    "photos.desc": "Fotoğrafçılıktan çok anlamıyorum, ancak bazı fotoğraflarımı paylaşmak istedim. Özellikle tarihi dokuları olan şehirleri gezmeyi ve fotoğraflamayı çok seviyorum.",
+
+    "footer.desc": "Bu web sitesi NextJS ile oluşturuldu.",
+    "footer.github.link": "Kodları Github'da bulabilirsiniz.",
+    "footer.all.rights": "Tüm hakları saklıdır."
 }

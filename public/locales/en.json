@@ -1,6 +1,62 @@
 {
     "navbar.about": "About",
     "navbar.project": "Projects",
-    "navbar.used": "Used",
-    "navbar.photos": "Photos"
+    "navbar.used": "Uses",
+    "navbar.photos": "Photos",
+
+    "hero.hello": "Hi there,",
+    "hero.name": "I'm {{name}}",
+    "hero.title": "I create things for the web/mobile.",
+    "hero.desc": "I'm a software developer working on creating (and sometimes designing) digital experiences. I enjoy solving problems and creating new products. I'm also the founder of a start-up called Soldd.",
+
+    "about": "About me",
+    "about.paragraph.one": "Hi! My name is Furkan and I like to make things that make people's lives easier. I first started software development in 2015 by learning HTML & CSS. After that, I started to produce various applications by learning JavaScript.",
+    "about.paragraph.two": "I started learning coding by doing mostly basic HTML and CSS in 2015, but in 2019 I decided to get serious about programming and web development. I had a passion for design, so I spent time learning Figma as well. 2020 I became the co-founder of my own start-up company in.",
+    "about.paragraph.three": "I have experience with JavaScript frameworks like React and NextJS, as well as HTML5 styling languages like HTML5, CSS3, and Tailwind. My favorite tech stack is Tailwind/NextJS/Prisma with NodeJS backend.",
+    "about.latest.tech": "Latest technologies I work on",
+
+    "articles": "Articles",
+
+    "email.section.title": "Stay tuned!",
+    "email.section.desc": "Enter your email address to receive emails about new posts, projects, and more.",
+    "email.section.button": "Subscribe",
+    "email.section.placeholder": "Enter your email address",
+
+    "experience": "Experience",
+    "experience.present": "Currently",
+
+    "projects.title": "Some things I cooked 🍪",
+    "projects.desc": "I'm working on many projects by myself. But I can't get them all live. So you can find some of them here. Most of the code is open source. If there is something that interests you, you can review the code and contribute to improve it.",
+    "projects.build.with": "Made with the following technologies",
+
+    "projects.soldd.title": "Soldd: Handmade Marketplace",
+    "projects.soldd.desc": "A platform for selling handcrafted products",
+
+    "projects.tailbuild.title": "Tailbuild: Tailwind CSS Website Builder",
+    "projects.tailbuild.desc": "A tool that helps you build websites with Tailwind CSS",
+
+    "projects.resumeto.title": "Resumeto",
+    "projects.resumeto.desc": "A tool that helps you build a website from your resume",
+
+    "used.title": "Technological things that I love",
+    "used.desc": "I add products that increase my productivity while writing code or in daily life with their links.",
+
+    "workstation": "Workstation",
+    "software": "Software",
+    "design": "Design",
+    "productivity": "Productivity",
+
+    "used.laptop.desc": "Apple's M chips are really successful. The speed of the device is one of the factors that increase productivity.",
+    "used.screen": "It has a size of 32 inches. It is very useful to use it by splitting the screen in two.",
+    "used.visual.studio": "I use it as a code editor. I use it with many plugins. Plugins are very helpful while writing code. I even wrote this description with Github Co-Pilot.",
+    "used.iterm": "It's a terminal that I love. You can customize it. Definitely install Fig in it.",
+    "used.figma": "An indispensable tool when designing products. I think Figma's simplicity is its strongest element.",
+    "used.notion": "A tool that increases productivity. You can organize everything with Notion. It's also a very powerful tool when used with relational dbs.",
+
+    "photos.title": "Some photos I took",
+    "photos.desc": "I don't know much about photography, but I wanted to share some of my photos. I especially love to travel and photograph cities with historical textures.",
+
+    "footer.desc": "This website was created with NextJS.",
+    "footer.github.link": "You can find the codes on Github.",
+    "footer.all.rights": "All rights reserved."
 }
