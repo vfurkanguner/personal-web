@@ -3,27 +3,27 @@ import { MoonIcon, SunIcon } from "@heroicons/react/24/solid/";
 import Link from "next/link";
 import StyledMenu from "./Menu";
 import { useRouter } from "next/router";
+import { useTranslation } from 'react-i18next';
 
 type Props = {};
 
 export const navigation = [
-  { name: "Hakkımda", href: "/" },
+  { name: "navbar.about", href: "/" },
   {
-    name: "Projeler",
+    name: "navbar.project",
     href: "/projects",
   },
-  { name: "Kullandıklarım", href: "/uses" },
-  { name: "Fotoğraflarım", href: "/photos" },
+  { name: "navbar.used", href: "/uses" },
+  { name: "navbar.photos", href: "/photos" },
 ];
 
 export default function Navbar({}: Props) {
+  const { t } = useTranslation();
   const router = useRouter();
 
   const isRouteActive = (route: string) => {
     return route === router.pathname;
   };
-
-  
 
   return (
     <div className="flex items-center justify-between relative">
@@ -72,7 +72,7 @@ export default function Navbar({}: Props) {
                 : "dark:text-zinc-600 text-zinc-600 "
             }`}
           >
-            <Link href={item.href}>{item.name}</Link>
+            <Link href={item.href}>{t(item.name)}</Link>
             {isRouteActive(item.href) ? (
               <span className="absolute inset-x-1 -bottom-px h-[2px] bg-gradient-to-r from-indigo-500/0 via-indigo-500/40 to-indigo-500/0 " />
             ) : null}
