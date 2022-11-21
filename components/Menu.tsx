@@ -3,8 +3,10 @@ import { Fragment, useState } from "react";
 import {  XMarkIcon, Bars3Icon  } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { navigation } from "./Navbar";
+import { useTranslation } from 'react-i18next';
 
 export default function StyledMenu() {
+  const { t } = useTranslation();
   let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -71,7 +73,7 @@ export default function StyledMenu() {
                     <ul className="grid">
                       {navigation.map((nav) => (
                         <li key={nav.name} className="font-mono py-6 text-2xl md:text-4xl hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 dark:from-indigo-600 dark:to-blue-500 hover:text-transparent hover:bg-clip-text lg:text-5xl transition-all hover:scale-105 text-zinc-200 dark:text-zinc-200 font-semibold cursor-pointer">
-                          <Link href={nav.href}>{nav.name}</Link>
+                          <Link href={nav.href}>{t(nav.name)}</Link>
                         </li>
                       ))}
                     </ul>

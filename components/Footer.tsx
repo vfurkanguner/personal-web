@@ -14,7 +14,7 @@ export default function Footer({}: Props) {
   return (
     <footer className="border-t py-4 md:py-10 lg:py-16">
       <div className="mx-auto max-w-2xl lg:max-w-5xl px-4 md:px-6 lg:px-8 text-zinc-200">
-        <div className="flex flex-col md:flex-row gap-y-4  justify-between">
+        <div className="flex flex-col md:flex-row gap-y-8  justify-between">
           <aside>
             <p className="text-zinc-400 text-base">{t("footer.desc")}
             {' '} 
@@ -26,13 +26,13 @@ export default function Footer({}: Props) {
               {t("footer.github.link")}
               </a>
             </p>
-            <p className="text-sm ">
+            <p className="text-sm">
               Made with <span className="text-red-500">❤️</span>{" "}
             </p>
           </aside>
 
           <div className="grid text-xs gap-y-2">
-            <select onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent border px-1 py-3 rounded-full">
+            <select onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent border px-6 py-3 rounded-full">
               <option value="en">
                  English
               </option>
