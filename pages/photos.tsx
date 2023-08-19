@@ -12,7 +12,7 @@ export default function Photos({}: Props) {
   const { t } = useTranslation();
   return (
     <Layout>
-      <div className=" my-16 sm:my-32">
+      <div className="my-16 sm:my-32">
         <div className="space-y-4 max-w-xl">
           <h1>{t("photos.title")}</h1>
           <p>{t("photos.desc")}</p>
