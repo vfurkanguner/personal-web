@@ -12,7 +12,7 @@ const CombinGeneratorPage = () => (
         <div className="my-16 sm:my-32">
             <div className='container mx-auto flex flex-col items-center justify-center'>
                 <h1 className='mb-4 text-2xl sm:text-4xl font-bold text-left'>Combin Generator</h1>
-                <p>
+                <p className='text-center'>
                     You can generate your own combin by selecting upper and lower parts of the combin.
                 </p>
                 <div className='max-w-xs flex items-center justify-center flex-col'>
