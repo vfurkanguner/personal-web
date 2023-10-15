@@ -2,6 +2,10 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
+type Items = {
+  [key: string]: string;
+};
+
 const postsDirectory = join(process.cwd(), "_posts");
 
 export function getPostSlugs() {
@@ -13,10 +17,6 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
-
-  type Items = {
-    [key: string]: string;
-  };
 
   const items: Items = {};
 
