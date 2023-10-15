@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
+    "@vercel/analytics": "^1.1.1",
     "gray-matter": "^4.0.3",
     "i18next": "^22.0.6",
     "next": "13.0.0",
