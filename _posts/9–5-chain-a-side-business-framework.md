@@ -36,13 +36,13 @@ Our competitors are quite strong, many of them have been in the industry for yea
 
 On these days, our focus should be on sales-related activities. To quickly reach potential customers, we use outbound marketing strategies. Our primary goal is to determine whether our product can be sold. Here are some superficial methods for example:
 
-**Google & Linkedin Ads:**
+### Google & Linkedin Ads:
 This is a straightforward and fast method. First, we need to narrow down our target audience. Using filters like demographics, education, and job, we make sure our ads reach only our target audience. We also want to prevent people outside our potential customer base from seeing our ads, so we use negative targeting. We can run regular A/B tests with small budgets for our ads.
 
-**Cold Emails:**
+### Cold Emails:
 If we have created a waitlist and have potential customers on that list, we can try selling our product by introducing it via cold emails. If we don't have a waitlist, there are platforms where we can purchase the contact lists of potential customers, ensuring GDPR/KVK compliance. AI tools like ChatGPT can be used to create the content for cold emails, as these tools produce effective results.
 
-**Twitter & Linkedin DMs:** 
+### Twitter & Linkedin DMs: 
 One of the most effective methods to validate our idea is to reach out to well-known individuals in the SaaS field via Twitter and Linkedin DMs, communicate with them, and have them try our product for free. Regularly applying this approach is important because it can help us reach our potential customer base and even potential investors.
 
 These sales channels and methods can be diversified, but the main aim is to provide you with examples to encourage you to develop your own skills and focus on the sales process. You may not enjoy this part of the business, but it's something you must do.
@@ -53,17 +53,17 @@ We emphasized the need to focus on sales for short-term goals. However, we also 
 
 Here are some superficial methods for example:
 
- **SEO:** 
+ ### SEO: 
  
  SEO is one of the most important resources that many SaaS companies invest in to attract and acquire customers. Creating specific pages for our target audience and comparative content with our competitors are ideal strategies to generate traffic. Regularly adding blog content is important, and you can manage this process with freelancers from platforms like Upwork and Fiverr. In the initial stages, I believe that the quantity of content is more important than quality. So, initially, creating more blog content can be beneficial.
 
-**Personal Brand Building:** 
+### Personal Brand Building: 
 Today, people tend to follow leaders rather than products. Therefore, we need to build our personal brand. Your followers could become your most loyal customers. It's important to actively create content on various channels of social media. If you are skilled at writing, blogs and Twitter may be ideal options. If you enjoy creating visuals and videos, Instagram and TikTok are the most suitable platforms. But having a presence on at least one social media is essential for growing your network.
 
-**Instagram & Tiktok:** 
+### Instagram & Tiktok: 
 I'm keeping this section brief because it may not be applicable to every product. Instagram and TikTok are especially popular platforms among the younger generation. If you aim to create viral content, these platforms may be ideal for you.
 
-**Facebook, Reddit, and Discord:**
+### Facebook, Reddit, and Discord
 Platforms like Facebook, Reddit, and Discord groups are useful for joining communities where your target audience resides, creating topics, and making comments. Especially in the early stages, when you don't have any users yet, these platforms can help you acquire your first users.
 
 ### Weekends (Product Development)
