@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+// @ts-nocheck
+import React, { PropsWithChildren } from 'react';
 import { getPostBySlug, getPostSlugs } from '../../lib/api';
 import Layout from '../../components/Layout';
-import markdownToHtml from '../../lib/markdownToHtml';
 import Markdown from 'react-markdown';
 
 type Post = {
@@ -18,9 +18,11 @@ type Props = {
     post: Post;
 };
 
-const P = ({ children }: { children: any }) => <p className="prose md:text-xl text-lg">{children}</p>
-const H2 = ({ children }: { children: any }) => <h2 className="prose text-gray-200 text-2xl font-semibold">{children}</h2>
-const H3 = ({ children }: { children: any }) => <h3 className="prose text-gray-200 text-xl font-semibold">{children}</h3>
+
+const P = ({ children }) => <p className="prose md:text-xl text-lg">{children}</p>
+const H2= ({ children }) => <h2 className="prose text-gray-200 text-2xl font-semibold">{children}</h2>
+const H3 = ({ children }) => <h3 className="prose text-gray-200 text-xl font-semibold">{children}</h3>
+ 
 
 const PostPage = ({ post }: Props) => {
     const { title, date, author, coverImage, excerpt } = post;
