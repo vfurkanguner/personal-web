@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useTransition } from "react";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   post: {
@@ -13,6 +14,7 @@ type Props = {
 };
 
 export default function BlogBox({ post }: Props) {
+  const { t } = useTranslation();
   return (
     <article
       key={post.id}
@@ -29,7 +31,7 @@ export default function BlogBox({ post }: Props) {
           </a>
         </h2>
         <button className="px-5 py-1 text-zinc-200  border-2 border-zinc-200 rounded-full">
-          Devamını oku
+          {t('common.read.more')}
         </button>
       </div>
       <div className="order-first lg:order-last">

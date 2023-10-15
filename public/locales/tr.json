@@ -58,5 +58,7 @@
 
     "footer.desc": "Bu web sitesi NextJS ile oluşturuldu.",
     "footer.github.link": "Kodları Github'da bulabilirsiniz.",
-    "footer.all.rights": "Tüm hakları saklıdır."
+    "footer.all.rights": "Tüm hakları saklıdır.",
+
+    "common.read.more": "Devamını Oku"
 }

@@ -58,5 +58,7 @@
 
     "footer.desc": "This website was created with NextJS.",
     "footer.github.link": "You can find the codes on Github.",
-    "footer.all.rights": "All rights reserved."
+    "footer.all.rights": "All rights reserved.",
+
+    "common.read.more": "Read More"
 }
